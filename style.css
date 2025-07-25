@@ -1,0 +1,225 @@
+:root {
+  --primary: #304ffe;
+  --accent: #ff6f00;
+  --bg: #f8f8fd;
+  --text: #292929;
+  --card-bg: #fff;
+  --shadow: 0 4px 20px rgba(48,79,254,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  padding: 2.5rem 0 2rem 0;
+  background: linear-gradient(90deg, #304ffe 80%, #ff6f00 100%);
+  color: #fff;
+  text-align: center;
+  animation: fadeInDown 1.2s;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #b2caff;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7em 1.6em;
+  border: none;
+  border-radius: 2em;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(255,111,0,0.08);
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+.btn:hover {
+  background: #e65100;
+  transform: translateY(-3px) scale(1.06);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+main {
+  margin: 2.5rem auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 1.2s;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 6px 32px rgba(48,79,254,0.12);
+}
+
+h1,h2,h3 {
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 1.5rem;
+}
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0.5rem;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--accent));
+  border-radius: 2px;
+}
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  background: var(--primary);
+  border-radius: 50%;
+  margin-right: 1rem;
+  position: relative;
+  flex-shrink: 0;
+  top: 0.4rem;
+  box-shadow: 0 0 8px #b2caff55;
+  animation: bounce 1.8s infinite;
+}
+.timeline-content h3 {
+  font-size: 1.1rem;
+}
+.timeline-content span {
+  color: #757575;
+  font-size: 0.98rem;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 0.8rem;
+}
+.skill-tag {
+  background: linear-gradient(90deg,#304ffe 60%,#ff6f00 100%);
+  color: #fff;
+  padding: 0.4em 1.1em;
+  font-size: 1rem;
+  border-radius: 1em;
+  display: inline-block;
+  box-shadow: 0 2px 7px #b2caff33;
+  animation: slideIn 1.2s;
+}
+
+.frameworks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.framework-badge {
+  background: #e3eaff;
+  color: #304ffe;
+  padding: 0.4em 1.1em;
+  font-size: 1rem;
+  border-radius: 1em;
+  font-weight: 600;
+  box-shadow: 0 1px 4px #304ffe1c;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+  animation: fadeInBadge 1.2s;
+}
+.framework-badge:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+ul {
+  margin-top: 0.8rem;
+  margin-left: 1.4rem;
+  font-size: 1.05rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0 1.3rem 0;
+  background: var(--card-bg);
+  color: #757575;
+  border-top: 1px solid #eee;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-35px);}
+  100% { opacity: 1; transform: none;}
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(45px);}
+  100% { opacity: 1; transform: none;}
+}
+@keyframes fadeInBadge {
+  0% { opacity: 0; transform: scale(0.95);}
+  100% { opacity: 1; transform: scale(1);}
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #ff6f0022;}
+  70% { box-shadow: 0 0 0 11px #ff6f0000;}
+  100% { box-shadow: 0 0 0 0 #ff6f0022;}
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-8px);}
+}
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(24px);}
+  100% { opacity: 1; transform: none;}
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 6vw;
+  }
+  .card {
+    padding: 1.3rem 0.8rem;
+  }
+  .skills-list, .frameworks {
+    gap: 0.7rem 0.4rem;
+  }
+}
